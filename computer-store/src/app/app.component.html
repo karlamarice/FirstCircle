@@ -1,0 +1,19 @@
+<mat-drawer-container [hasBackdrop]="true">
+    <mat-drawer class="w-1/4 p-2.5 min-w-300" #drawer [mode]="'over'">
+        <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-header (menuToggle)="drawer.toggle()" (cartToggle)="openDialog(items, cart)"></app-header>
+        <app-carousel></app-carousel>
+        <div class="list-of-items flex flex-wrap p-12 gap-16 justify-center">
+            <app-item-card 
+                *ngFor="let item of items" 
+                [itemName]="item.name" 
+                [itemPrice]="item.price"
+                [itemSku]="item.sku"
+                [itemPromo]="item.promo"
+                (counterEvent)="updateCart($event)"
+            ></app-item-card>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

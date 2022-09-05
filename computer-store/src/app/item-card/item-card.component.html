@@ -1,0 +1,17 @@
+<mat-card class="w-80 p-0 pb-3">
+  <mat-card-header class="pt-4">
+    <mat-card-title>{{itemName}}</mat-card-title>
+    <mat-card-subtitle>{{itemPrice | currency:'USD':'symbol'}}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="image-container flex justify-center">
+    <img class="h-80 p-6" [src]="'../../assets/images/' + this.itemSku + '.jpeg'" alt="Item Image">
+  </div>
+  <mat-card-actions class="actions-container mx-3 p-2 flex justify-center">
+    <button *ngIf="displayAddToCart" class="relative py-2.5 px-6 rounded-md font-bold text-center" (click)="addToCart()">Add to Cart</button>
+    <div *ngIf="!displayAddToCart" class="counter-group h-10">
+      <span class="minus w-8 h-8 rounded-md inline-block text-center m-1.5 leading-8" (click)="onMinus()">-</span>
+      <input class="h-8 w-28" type="text" (change)="onChange($event)" (keydown)="onKeyDown($event)" [ngModel]="count" value="count"/>
+      <span class="plus w-8 h-8 rounded-md inline-block text-center m-1.5 leading-8" (click)="onPlus()">+</span>
+    </div>
+  </mat-card-actions>
+</mat-card>

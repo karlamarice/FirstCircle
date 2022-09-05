@@ -1,0 +1,11 @@
+::ng-deep {
+    app-carousel {
+        .carousel-inner {
+            height: 500px;
+            img {
+                height: auto;
+                overflow: hidden;
+            }
+        }
+    }
+}
