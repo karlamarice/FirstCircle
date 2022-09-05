@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## How to run in local
 
 Clone this repository. Open folder in Visual Studio Code. In VS Code > Open Terminal, run the following codes:
+`cd computer-store`
 `npm run install`
 `npm start`
 
