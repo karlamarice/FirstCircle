@@ -114,8 +114,6 @@ export class CartComponent implements OnInit{
             break;
           }
         }
-      } else {
-        totalCost = cartItem.qty * item.price;
       }
       
       scannedItem.total = totalCost;
